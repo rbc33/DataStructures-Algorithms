@@ -1,0 +1,1 @@
+This implementation uses the Dutch National Flag algorithm to sort an array containing only 0s, 1s, and 2s in a single traversal. It achieves O(n) time complexity by using three pointers to track positions for 0s, 1s, and 2s. The space complexity is O(1) as it sorts in-place, using only three index variables regardless of input size.

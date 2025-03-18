@@ -1,0 +1,1 @@
+This implementation traverses the array once, keeping track of the minimum and maximum values encountered. It achieves O(n) time complexity by making a single pass through the array with a simple comparison at each element. The space complexity is O(1) as it only uses two variables to store the current minimum and maximum values, regardless of the input size.
