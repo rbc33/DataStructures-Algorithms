@@ -1,7 +1,23 @@
+from os import name
+import networkx as nx
+import pickle
 import heapq
 from math import sqrt  # 'math' should be lowercase
 # source: https://www.redblobgames.com/pathfinding/a-star/introduction.html
 #           https://www.geeksforgeeks.org/a-search-algorithm/
+class Map:
+	def __init__(self, G):
+		self._graph = G
+		self.intersections = nx.get_node_attributes(G, "pos")
+		self.roads = [list(G[node]) for node in G.nodes()]
+
+	def save(self, filename):
+		with open(filename, 'wb') as f:
+			pickle.dump(self._graph, f)
+def load_map(name):
+	with open(name, 'rb') as f:
+		G = pickle.load(f)
+	return Map(G)
 
 def shortest_path(M, start, goal):
     # If start and goal are the same, return just the start node
@@ -63,3 +79,5 @@ def shortest_path(M, start, goal):
     
     # No path found
     return None
+if __name__ == "__main__":
+    print("hey")
